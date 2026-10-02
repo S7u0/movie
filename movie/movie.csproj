@@ -133,11 +133,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\bookingController.cs" />
+    <Compile Include="Controllers\categoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\loginController.cs" />
+    <Compile Include="Controllers\movieController.cs" />
     <Compile Include="Controllers\userController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\booking.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\login.cs" />
     <Compile Include="Models\movie.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,10 +205,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\user\Create.cshtml" />
+    <Content Include="Views\category\Create.cshtml" />
+    <Content Include="Views\Movie\Create.cshtml" />
+    <Content Include="Views\login\Create.cshtml" />
+    <Content Include="Views\booking\Details.cshtml" />
+    <Content Include="Views\booking\Create.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Movie\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />

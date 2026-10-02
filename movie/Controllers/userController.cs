@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using user.Models;
+using movie.Models;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -63,7 +63,7 @@ namespace movie.Controllers
             {
                 return Content(ex.ToString());
             }
-        }
+        } 
 
         // GET: user/Edit/5
         public ActionResult Edit(int id)

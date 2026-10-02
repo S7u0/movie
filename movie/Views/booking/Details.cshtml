@@ -1,0 +1,93 @@
+﻿@model IEnumerable<movie.Models.Booking>
+
+@{
+    ViewBag.Title = "My Bookings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Bookings</h2>
+<hr />
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.booking_ID)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Cat_Type)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Movie_name)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.no_of_Tickets)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.amount)
+                </th>
+
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.booking_ID)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cat_Type)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Movie_name)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.no_of_Tickets)
+                    </td>
+
+                    <td>
+                        ₹ @Html.DisplayFor(modelItem => item.amount)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink(
+                            "Edit",
+                            "Edit",
+                            new { id = item.booking_ID },
+                            new { @class = "btn btn-primary btn-sm" } 
+
+                        ) |
+                        @Html.ActionLink(
+                             "Edit",
+                             "Edit",
+                             new { id = item.booking_ID },
+                             new { @class = "btn btn-primary btn-sm" }
+                        )
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>            
+
+
+}
+else
+{
+    <div class="alert alert-info">
+        You have no bookings yet.
+    </div>
+}
+
+<p> @Html.ActionLink("Book Movie", "Create", "booking", null, new { @class = "btn btn-success" }) </p>
